@@ -1,12 +1,14 @@
-import "./App.css";
 import Listings from "../features/listings/Listings";
 import SearchBar from "../components/searchBar/SearchBar";
+import Favorites from "../components/favorites/Favorites";
 
 function App() {
   return (
-    <div>
-      <SearchBar />
-      <nav></nav>
+    <div className="App">
+      <div className="SearchBar">
+        <SearchBar />
+      </div>
+      <Favorites />
       <Listings />
     </div>
   );

@@ -5,6 +5,8 @@ export default function Listings() {
   return (
     <div>
       <Listing />
+      <Listing />
+      <Listing />
     </div>
   );
 }
