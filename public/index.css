@@ -1,32 +1,80 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 :root {
   --cream: #eae7dc;
   --light-brown: #d8c3a5;
   --dark-gray: #8e8d8a;
   --light-pink: #e98074;
   --intense-pink: #e85a4f;
+  background-color: var(--cream);
+  box-sizing: border-box;
+}
+
+.titleReddit {
+  font-family: "Lobster";
+  color: var(--dark-gray);
+  font-size: 2rem;
+}
+
+.titleNano {
+  color: var(--intense-pink);
+  font-family: "Zen Tokyo Zoo", cursive;
+  font-size: 2rem;
 }
 
 .App {
-  text-align: center;
-  background-color: var(--dark-gray);
 }
 
 .App-logo {
-  height: 40vmin;
+  //  height: 40vmin;
   pointer-events: none;
+}
+
+.content {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  border: 2px black solid;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  padding: 10px 20px 0 0;
+}
+
+li {
+  text-align: left;
+  margin: 5px;
+}
+
+.Favorites {
+}
+
+.listings {
+  padding: 0 20px;
+  border: 2px black solid;
+  width: 60%;
+}
+
+.listing {
+  border: 2px black solid;
+  margin: 20px;
+  padding: 5px;
+}
+
+.Search-bar {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.Search-bar > div {
+  margin: 10px;
+}
+
+.search {
+  margin: 10px;
+  font-size: 22px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

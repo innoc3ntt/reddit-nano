@@ -3,7 +3,7 @@ import Listing from "../listing/Listing";
 
 export default function Listings() {
   return (
-    <div>
+    <div className="listings">
       <Listing />
       <Listing />
       <Listing />
