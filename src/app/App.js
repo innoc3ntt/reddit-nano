@@ -1,14 +1,23 @@
 import Listings from "../features/listings/Listings";
+import { loadListingsBySubreddit } from "../features/listings/listingsSlice";
 import SearchBar from "../components/searchBar/SearchBar";
 import Favorites from "../components/favorites/Favorites";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 library.add(fab, faChevronDown, faChevronUp);
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadListingsBySubreddit(), [dispatch]);
+  });
+
   return (
     <div className="App">
       <div className="Search-bar">
