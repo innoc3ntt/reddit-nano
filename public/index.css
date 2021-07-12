@@ -5,6 +5,7 @@
   --darker-gray: #5f5d56;
   --light-pink: #e98074;
   --intense-pink: #e85a4f;
+  --reddit-orange: #ff5700;
   background-color: var(--cream);
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -28,12 +29,12 @@ p {
 
 .titleReddit {
   font-family: "Lobster";
-  color: var(--dark-gray);
+  color: var(--reddit-orange);
   font-size: 2rem;
 }
 
 .titleNano {
-  color: var(--intense-pink);
+  color: var(--light-brown);
   font-family: "Zen Tokyo Zoo", cursive;
   font-size: 2rem;
 }
@@ -94,7 +95,7 @@ li {
   position: fixed;
   z-index: 10;
   opacity: 1;
-  background-color: yellowgreen;
+  background-color: var(--dark-gray);
   padding: 10px;
 }
 

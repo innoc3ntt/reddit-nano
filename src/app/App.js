@@ -14,12 +14,12 @@ function App() {
       <div className="Search-bar">
         <FontAwesomeIcon
           icon={["fab", "reddit"]}
-          size="2x"
-          color="#e85a4f"
+          size="3x"
+          color="#FF5700"
           className="App-logo"
         />
         <div>
-          <span className="titleReddit">Reddit</span>
+          <span className="titleReddit">Reddit </span>
           <span className="titleNano">NANO</span>
         </div>
         <SearchBar />

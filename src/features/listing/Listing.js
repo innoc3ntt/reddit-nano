@@ -5,9 +5,9 @@ export default function Listing() {
   return (
     <div className="listing">
       <div className="info">
-        <FontAwesomeIcon icon="chevron-up" size="2x" color="gray" />
+        <FontAwesomeIcon icon="chevron-up" size="2x" color="#d8c3a5" />
         <span>36k</span>
-        <FontAwesomeIcon icon="chevron-down" size="2x" color="gray" />
+        <FontAwesomeIcon icon="chevron-down" size="2x" color="#d8c3a5" />
       </div>
       <div className="listingContent">
         <h1> Lorem ipsum dolor sit amet.</h1>
