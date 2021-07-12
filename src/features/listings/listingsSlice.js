@@ -15,11 +15,11 @@ export const listingsSlice = createSlice({
     listings: [],
     isLoading: false,
     hasError: false,
+    subreddit: "popular",
   },
   reducers: {
-    addListing: (state, action) => {
-      const { id } = action.payload;
-      state.listings[id] = action.payload;
+    changeSubreddit: (state, action) => {
+      state.subreddit = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -41,5 +41,5 @@ export const listingsSlice = createSlice({
 });
 
 export const selectListings = (state) => state.listings.listings;
-export const { addListing } = listingsSlice.actions;
+export const { addListing, changeSubreddit } = listingsSlice.actions;
 export default listingsSlice.reducer;

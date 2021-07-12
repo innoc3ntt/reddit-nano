@@ -13,7 +13,7 @@ import {
   Switch,
   Route,
   Link,
-  useRouteMatch,
+  useParams,
 } from "react-router-dom";
 import ROUTES from "./routes";
 
@@ -43,7 +43,8 @@ function App() {
           <SearchBar />
         </div>
         <div className="content">
-          <Favorites />
+          <Favorites sub="popular" />
+
           <Switch>
             <Route exact path="/">
               <Listings />

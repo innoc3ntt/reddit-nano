@@ -11,9 +11,9 @@ export const favoritesSlice = createSlice({
 export const selectFavorites = (state) => state.favorites.favorites;
 export default favoritesSlice.reducer;
 
-export const getFavorites = createAsyncThunk(async (favorite) => {
-  const subreddit = favorite[subreddit];
-  const data = await fetch(`https://reddit.com/r/${subreddit}`);
-  const json = await data.json();
-  return json;
-});
+// export const getFavorites = createAsyncThunk(async (favorite) => {
+//   const subreddit = favorite[subreddit];
+//   const data = await fetch(`https://reddit.com/r/${subreddit}`);
+//   const json = await data.json();
+//   return json;
+// });

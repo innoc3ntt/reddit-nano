@@ -1,10 +1,22 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { kformatter } from "../../app/helpers/helpers";
+import parse from "html-react-parser";
 
 export default function Listing(props) {
-  const { subreddit_name_prefixed, title, author, url, preview, score } =
-    props.data;
+  const {
+    subreddit_name_prefixed,
+    title,
+    author,
+    url,
+    selftext_html,
+    selftext,
+    score,
+  } = props.data;
+
+  const previewText = (text) =>
+    text.length > 1000 ? text.substring(0, 1000) + "  [...]" : text;
+
   return (
     <div className="listing">
       <div className="listingInfo">
@@ -22,7 +34,8 @@ export default function Listing(props) {
         </div>
 
         <div className="listingContent">
-          <h1> {title}</h1>
+          <h1>{title}</h1>
+          {selftext && previewText(selftext)}
           <img src={url} alt="" />
         </div>
 

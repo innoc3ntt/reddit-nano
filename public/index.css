@@ -146,3 +146,7 @@ img {
   font-size: 0.75rem;
   font-weight: 0;
 }
+
+.listingMain {
+  width: 100%;
+}
