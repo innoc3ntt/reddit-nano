@@ -8,6 +8,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+} from "react-router-dom";
+import ROUTES from "./routes";
 
 library.add(fab, faChevronDown, faChevronUp);
 
@@ -19,25 +27,34 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <div className="Search-bar">
-        <FontAwesomeIcon
-          icon={["fab", "reddit"]}
-          size="3x"
-          color="#FF5700"
-          className="App-logo"
-        />
-        <div>
-          <span className="titleReddit">Reddit </span>
-          <span className="titleNano">NANO</span>
+    <Router>
+      <div className="App">
+        <div className="Search-bar">
+          <FontAwesomeIcon
+            icon={["fab", "reddit"]}
+            size="3x"
+            color="#FF5700"
+            className="App-logo"
+          />
+          <div>
+            <span className="titleReddit">Reddit </span>
+            <span className="titleNano">NANO</span>
+          </div>
+          <SearchBar />
         </div>
-        <SearchBar />
+        <div className="content">
+          <Favorites />
+          <Switch>
+            <Route exact path="/">
+              <Listings />
+            </Route>
+            <Route path={`/r/:subreddit`}>
+              <Listings />
+            </Route>
+          </Switch>
+        </div>
       </div>
-      <div className="content">
-        <Favorites />
-        <Listings className="listings" />
-      </div>
-    </div>
+    </Router>
   );
 }
 

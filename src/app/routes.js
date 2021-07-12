@@ -7,6 +7,9 @@
 //   topicsRoute: () => "/topics",
 // };
 
-const ROUTES = {};
+const ROUTES = {
+  subredditRoute: (subreddit) => `/r/${subreddit}`,
+  testRoute: () => "/test",
+};
 
 export default ROUTES;

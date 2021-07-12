@@ -39,14 +39,6 @@ p {
   font-size: 2rem;
 }
 
-.App {
-}
-
-.App-logo {
-  //  height: 40vmin;
-  pointer-events: none;
-}
-
 .content {
   display: flex;
   padding: 10px;

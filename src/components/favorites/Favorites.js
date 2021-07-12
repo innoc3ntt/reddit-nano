@@ -1,12 +1,22 @@
 import React from "react";
-import { getFavorites, selectFavorites } from "./favoritesSlice";
+import { selectFavorites } from "./favoritesSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
 import { loadListingsBySubreddit } from "../../features/listings/listingsSlice";
+import { Link, useRouteMatch } from "react-router-dom";
 
 export default function Favorites() {
+  let match = useRouteMatch();
+  console.log(match);
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
+  const regEx = "/(?<=r/).*/g";
+
+  const handleClick = (subreddit) => {
+    // console.log(e);
+    // console.log(typeof e.target.innerHTML);
+    // console.log(e.target.innerHTML.match(regEx));
+    dispatch(loadListingsBySubreddit(subreddit));
+  };
 
   return (
     <div className="Favorites">
@@ -14,15 +24,12 @@ export default function Favorites() {
         {favorites.map((favorite) => {
           const subreddit = favorite.subreddit;
           return (
-            <li>
-              <button
-                onClick={() => {
-                  dispatch(loadListingsBySubreddit(subreddit));
-                }}
-              >
-                r/{subreddit}{" "}
-              </button>
-            </li>
+            <Link
+              to={`/r/${subreddit}`}
+              onClick={() => dispatch(loadListingsBySubreddit(subreddit))}
+            >
+              <li>r/{subreddit}</li>
+            </Link>
           );
         })}
       </ul>
