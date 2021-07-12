@@ -5,7 +5,7 @@ export const loadListingsBySubreddit = createAsyncThunk(
   async () => {
     const data = await fetch("https://www.reddit.com/r/popular.json");
     const json = await data.json();
-    return json;
+    return json.data.children.map((post) => post.data);
   }
 );
 
@@ -22,7 +22,7 @@ export const listingsSlice = createSlice({
       state.listings[id] = action.payload;
     },
   },
-  extraReducer: (builder) => {
+  extraReducers: (builder) => {
     builder
       .addCase(loadListingsBySubreddit.pending, (state) => {
         state.isLoading = true;
