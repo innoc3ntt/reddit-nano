@@ -2,10 +2,10 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const loadListingsBySubreddit = createAsyncThunk(
   "listings/loadListingsBySubreddit",
-  async () => {
-    const data = await fetch("https://www.reddit.com/r/popular.json");
+  async (subreddit) => {
+    const data = await fetch(`https://www.reddit.com/r/${subreddit}.json`);
     const json = await data.json();
-    return json.data.children.map((post) => post.data);
+    return json.data.children.map((listing) => listing.data);
   }
 );
 

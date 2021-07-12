@@ -15,7 +15,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadListingsBySubreddit(), [dispatch]);
+    dispatch(loadListingsBySubreddit("popular"), [dispatch]);
   });
 
   return (
