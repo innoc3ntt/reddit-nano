@@ -4,8 +4,9 @@ import Favorites from "../components/favorites/Favorites";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab);
+library.add(fab, faChevronDown, faChevronUp);
 
 function App() {
   return (

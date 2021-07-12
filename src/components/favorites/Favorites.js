@@ -4,9 +4,9 @@ export default function Favorites() {
   return (
     <div className="Favorites">
       <ul>
-        <li>Fav1</li>
-        <li>Fav2</li>
-        <li>Fav3</li>
+        <li>r/AmITheAsshole</li>
+        <li>r/MaliciousCompliance</li>
+        <li>r/wallStreetBets</li>
       </ul>
     </div>
   );
