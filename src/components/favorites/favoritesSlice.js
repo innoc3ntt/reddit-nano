@@ -3,7 +3,13 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const favoritesSlice = createSlice({
   name: "favorites",
   initialState: {
-    favorites: [{ subreddit: "AmITheAsshole" }, { subreddit: "technology" }],
+    favorites: [
+      { subreddit: "AmITheAsshole" },
+      { subreddit: "technology" },
+      { subreddit: "PrequelMemes" },
+      { subreddit: "Tinder" },
+      { subreddit: "WesternAustralia" },
+    ],
   },
   reducers: {},
 });

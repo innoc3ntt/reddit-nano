@@ -4,19 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { kformatter } from "../../app/helpers/helpers";
 //import parse from "html-react-parser";
 import Comment from "./Comment";
-import {
-  loadCommentsById,
-  selectComments,
-  selectId,
-  selectSubreddit,
-} from "./commentsSlice";
+import { loadCommentsById, selectComments } from "./commentsSlice";
 import { useParams } from "react-router-dom";
 
 export default function Comments(props) {
   const dispatch = useDispatch();
   const comments = useSelector(selectComments);
-  //const id = useSelector(selectId);
-  //const subreddit = useSelector(selectSubreddit);
 
   const { subreddit, id } = useParams();
 
@@ -27,6 +20,8 @@ export default function Comments(props) {
 
   return (
     <div className="listings">
+      <div className="post"></div>
+      <div clasName="comments"></div>
       {comments.map((comment, index) => {
         return <Comment data={comment.data} key={index} />;
       })}
