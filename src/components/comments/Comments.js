@@ -26,20 +26,28 @@ export default function Comments() {
     dispatch(loadCommentsById(input));
   }, [dispatch, id, subreddit]);
 
+  const POST = (
+    <div className="post">
+      <div className="postHeader">
+        <div className="info">
+          <FontAwesomeIcon icon="chevron-up" size="2x" />
+          <span>{kformatter(score)}</span>
+          <FontAwesomeIcon icon="chevron-down" size="2x" />
+        </div>
+        <div>
+          <h2>Posted by {author}</h2>
+          <h3>{utcTimeConverter(created_utc)}</h3>
+
+          <h1>{title}</h1>
+        </div>
+      </div>
+      <ReactMarkdown remarkPlugins={gfm} children={selftext} />
+    </div>
+  );
+
   return (
     <div className="commentsContainer">
-      {!loading && (
-        <div className="post">
-          <div className="info">
-            <FontAwesomeIcon icon="chevron-up" size="2x" />
-            <span>{kformatter(score)}</span>
-            <FontAwesomeIcon icon="chevron-down" size="2x" />
-          </div>
-          <h2>Posted by {author}</h2>
-          <h3>{utcTimeConverter(created_utc)}</h3> <h1>{title}</h1>
-          <ReactMarkdown remarkPlugins={gfm} children={selftext} />
-        </div>
-      )}
+      {!loading && POST}
       <div className="comments">
         {comments.map((comment, index) => {
           return <Comment data={comment.data} key={index} />;

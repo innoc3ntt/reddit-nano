@@ -11,7 +11,7 @@ export default function Listing(props) {
 
   return (
     <div className="listing">
-      <div className="listingInfo">
+      <div className="info">
         <FontAwesomeIcon icon="chevron-up" size="2x" />
 
         <span>{kformatter(score)}</span>
