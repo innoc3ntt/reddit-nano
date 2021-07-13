@@ -8,14 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
-import ROUTES from "./routes";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 library.add(fab, faChevronDown, faChevronUp);
 

@@ -20,11 +20,11 @@ export default function Listing(props) {
   return (
     <div className="listing">
       <div className="listingInfo">
-        <FontAwesomeIcon icon="chevron-up" size="2x" color="#d8c3a5" />
+        <FontAwesomeIcon icon="chevron-up" size="2x" className="chevrons" />
 
         <span>{kformatter(score)}</span>
 
-        <FontAwesomeIcon icon="chevron-down" size="2x" color="#d8c3a5" />
+        <FontAwesomeIcon icon="chevron-down" size="2x" className="chevrons" />
       </div>
 
       <div className="listingMain">
