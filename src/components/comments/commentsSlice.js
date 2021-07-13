@@ -19,7 +19,7 @@ export const commentsSlice = createSlice({
     hasError: false,
     subreddit: "popular",
     comments: [],
-    meta: {},
+    post: {},
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -31,7 +31,7 @@ export const commentsSlice = createSlice({
       .addCase(loadCommentsById.fulfilled, (state, action) => {
         state.isLoading = false;
         state.hasError = false;
-        state.meta = action.payload[0];
+        state.post = action.payload[0].data.children[0].data;
         state.comments = action.payload[1].data.children;
       })
       .addCase(loadCommentsById.rejected, (state) => {
@@ -44,5 +44,6 @@ export const commentsSlice = createSlice({
 export const selectComments = (state) => state.comments.comments;
 export const selectId = (state) => state.comments.id;
 export const selectSubreddit = (state) => state.comments.subreddit;
+export const selectPost = (state) => state.comments.post;
 export const {} = commentsSlice.actions;
 export default commentsSlice.reducer;
