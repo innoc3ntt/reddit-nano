@@ -6,7 +6,7 @@ import {
   changeSubreddit,
   loadListingsBySubreddit,
 } from "./listingsSlice";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 export default function Listings() {
   const dispatch = useDispatch();
@@ -18,12 +18,14 @@ export default function Listings() {
     dispatch(loadListingsBySubreddit(subreddit));
   }, [subreddit, dispatch]);
 
-  console.log(subreddit);
-
   return (
     <div className="listings">
       {listings.map((listing) => {
-        return <Listing data={listing} key={listing.id} />;
+        return (
+          <Link to={`/r/${subreddit}/comments/${listing.id}`}>
+            <Listing data={listing} key={listing.id} />
+          </Link>
+        );
       })}
     </div>
   );

@@ -1,8 +1,6 @@
 import React from "react";
 
-export default Comment(props) {
-    const {comment, user, score} = props
-    return (
-        <div>Comment</div>
-    )
+export default function Comment(props) {
+  //const { comment, user, score } = props.data;
+  return <div> This is a Comment</div>;
 }

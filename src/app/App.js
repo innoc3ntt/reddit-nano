@@ -9,6 +9,7 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Comments from "../components/comments/Comments";
 
 library.add(fab, faChevronDown, faChevronUp);
 
@@ -45,12 +46,9 @@ function App() {
           <Favorites sub="popular" />
 
           <Switch>
-            <Route exact path="/">
-              <Listings />
-            </Route>
-            <Route path={`/r/:subreddit`}>
-              <Listings />
-            </Route>
+            <Route exact path="/" component={Listings} />
+            <Route exact path={`/r/:subreddit`} component={Listings} />
+            <Route path={`/r/:subreddit/comments/:id`} component={Comments} />
           </Switch>
         </div>
       </div>
