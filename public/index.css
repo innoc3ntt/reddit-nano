@@ -39,19 +39,24 @@ p {
   font-size: 2rem;
 }
 
+.text-link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
 .content {
   display: flex;
   padding: 10px;
-  justify-content: center;
-  border: 2px black solid;
   position: absolute;
   top: 70px;
 }
 
 ul {
   list-style: none;
-  text-align: left;
-  padding: 10px;
+  padding: 0;
 }
 
 li {
@@ -64,6 +69,7 @@ li {
 .Favorites {
   background: var(--dark-gray);
   padding: 10px;
+  min-height: 3000px;
 }
 
 .Search-bar {
@@ -111,6 +117,14 @@ li {
   align-items: center;
 }
 
+.chevrons {
+  color: var(--light-brown);
+}
+
+.listingInfo:hover {
+  color: var(--reddit-orange);
+}
+
 .listing h1 {
   margin-top: 0;
   margin-bottom: 5px;
@@ -126,6 +140,14 @@ li {
   font-size: 0.5rem;
   font-weight: 1000;
   background-color: var(--darker-gray);
+}
+
+.listingMain:hover .listingContent {
+  color: var(--light-pink);
+}
+
+.listingInfo span {
+  font-weight: bold;
 }
 
 .listingHeader {

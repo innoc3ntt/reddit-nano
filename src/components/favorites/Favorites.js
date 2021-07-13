@@ -12,7 +12,7 @@ export default function Favorites() {
         {favorites.map((favorite) => {
           const subreddit = favorite.subreddit;
           return (
-            <Link to={`/r/${subreddit}`} key={subreddit}>
+            <Link to={`/r/${subreddit}`} key={subreddit} className="text-link">
               <li>r/{subreddit}</li>
             </Link>
           );

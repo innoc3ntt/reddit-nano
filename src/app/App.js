@@ -30,16 +30,22 @@ function App() {
     <Router>
       <div className="App">
         <div className="Search-bar">
-          <FontAwesomeIcon
-            icon={["fab", "reddit"]}
-            size="3x"
-            color="#FF5700"
-            className="App-logo"
-          />
+          <Link to="/">
+            <FontAwesomeIcon
+              icon={["fab", "reddit"]}
+              size="3x"
+              color="#FF5700"
+              className="App-logo"
+            />
+          </Link>
+
           <div>
-            <span className="titleReddit">Reddit </span>
-            <span className="titleNano">NANO</span>
+            <Link className="text-link">
+              <span className="titleReddit">Reddit </span>
+              <span className="titleNano">NANO</span>
+            </Link>
           </div>
+
           <SearchBar />
         </div>
         <div className="content">
