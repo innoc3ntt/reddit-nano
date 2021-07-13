@@ -24,6 +24,6 @@ export const utcTimeConverter = (postTime) => {
     : elapsed < secondsInMonth
     ? `Posted ${Math.floor(elapsed / secondsInDay)} days ago`
     : elapsed < secondsInYear
-    ? `Posted ${Math.floor(elapsed / secondsInMonth)}`
+    ? `Posted ${Math.floor(elapsed / secondsInMonth)} months ago`
     : `Posted ${Math.floor(elapsed / secondsInYear)} years ago`;
 };

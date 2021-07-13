@@ -34,7 +34,7 @@ function App() {
           </Link>
 
           <div>
-            <Link className="text-link">
+            <Link to="/" className="text-link">
               <span className="titleReddit">Reddit </span>
               <span className="titleNano">NANO</span>
             </Link>

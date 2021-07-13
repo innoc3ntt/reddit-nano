@@ -45,5 +45,6 @@ export const selectComments = (state) => state.comments.comments;
 export const selectId = (state) => state.comments.id;
 export const selectSubreddit = (state) => state.comments.subreddit;
 export const selectPost = (state) => state.comments.post;
-export const {} = commentsSlice.actions;
+export const selectIsLoading = (state) => state.comments.isLoading;
+//export const {} = commentsSlice.actions;
 export default commentsSlice.reducer;
