@@ -14,8 +14,8 @@ export default function Listing(props) {
     score,
   } = props.data;
 
-  const previewText = (text) =>
-    text.length > 1000 ? text.substring(0, 1000) + "  [...]" : text;
+  const previewText = (text, wordLimit) =>
+    text.length > wordLimit ? text.substring(0, wordLimit) + "  [...]" : text;
 
   return (
     <div className="listing">
@@ -35,7 +35,7 @@ export default function Listing(props) {
 
         <div className="listingContent">
           <h1>{title}</h1>
-          {selftext && previewText(selftext)}
+          {selftext && previewText(selftext, 500)}
           <img src={url} alt="" />
         </div>
 
