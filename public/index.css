@@ -199,3 +199,19 @@ h3 {
   display: inline;
   margin-right: 5px;
 }
+
+.commentsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.post {
+  padding: 15px;
+}
+
+.post h2,
+h3 {
+  display: inline;
+  margin-right: 5px;
+}

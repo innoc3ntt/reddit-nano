@@ -1,19 +1,18 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-//import parse from "html-react-parser";
 import Comment from "./Comment";
 import { loadCommentsById, selectComments, selectPost } from "./commentsSlice";
 import { useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import { gfm } from "remark-gfm";
+import { kformatter } from "../../app/helpers/helpers";
 
-export default function Comments(props) {
+export default function Comments() {
   const dispatch = useDispatch();
   const comments = useSelector(selectComments);
   const post = useSelector(selectPost);
-
-  const { selftext, author, created_utc, title } = post;
-
+  const { author, created_utc, title, selftext } = post;
   const { subreddit, id } = useParams();
 
   useEffect(() => {
@@ -22,17 +21,19 @@ export default function Comments(props) {
   }, [dispatch, id, subreddit]);
 
   return (
-    <div className="listings">
+    <div className="commentsContainer">
       <div className="post">
         <h2>Posted by {author}</h2>
-        <h3>{created_utc}</h3>
+        <h3>{kformatter(created_utc)}</h3>{" "}
+        {/*//TODO IMPORT HELPER & INLINE BLOCK */}
         <h1>{title}</h1>
-        <p>{selftext}</p>
+        <ReactMarkdown remarkPlugins={gfm} children={selftext} />
       </div>
-      <div clasName="comments"></div>
-      {comments.map((comment, index) => {
-        return <Comment data={comment.data} key={index} />;
-      })}
+      <div clasName="comments">
+        {comments.map((comment, index) => {
+          return <Comment data={comment.data} key={index} />;
+        })}
+      </div>
     </div>
   );
 }
