@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { kformatter } from "../../app/helpers/helpers";
+
 //import parse from "html-react-parser";
 import Comment from "./Comment";
 import { loadCommentsById, selectComments } from "./commentsSlice";
