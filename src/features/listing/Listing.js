@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { kformatter } from "../../app/helpers/helpers";
+import { kformatter, previewText } from "../../app/helpers/helpers";
 
 export default function Listing(props) {
   const {
@@ -13,8 +13,12 @@ export default function Listing(props) {
     url_overridden_by_dest,
   } = props.data;
 
-  const previewText = (text, wordLimit) =>
-    text.length > wordLimit ? text.substring(0, wordLimit) + "  [...]" : text;
+  const img = <img src={url} alt="" />;
+  const previewUrl = (
+    <h3>
+      <a href={url_overridden_by_dest}>{url_overridden_by_dest}</a>
+    </h3>
+  );
 
   return (
     <div className="listing">
@@ -34,8 +38,8 @@ export default function Listing(props) {
 
         <div className="listingContent">
           <h1>{title}</h1>
-          {selftext && previewText(selftext, 500)}
-          <img src={url} alt="" />
+          <h3>{selftext && previewText(selftext, 500)}</h3>
+          {img || previewUrl}
         </div>
 
         <div className="listingFooter">

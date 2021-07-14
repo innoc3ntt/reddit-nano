@@ -27,3 +27,6 @@ export const utcTimeConverter = (postTime) => {
     ? `Posted ${Math.floor(elapsed / secondsInMonth)} months ago`
     : `Posted ${Math.floor(elapsed / secondsInYear)} years ago`;
 };
+
+export const previewText = (text, wordLimit) =>
+  text.length > wordLimit ? text.substring(0, wordLimit) + "  [...]" : text;
