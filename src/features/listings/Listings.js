@@ -5,11 +5,14 @@ import {
   selectListings,
   changeSubreddit,
   loadListingsBySubreddit,
+  selectIsLoading,
 } from "./listingsSlice";
 import { useParams, Link } from "react-router-dom";
+import BounceLoader from "react-spinners/BounceLoader";
 
 export default function Listings() {
   const dispatch = useDispatch();
+  const loading = useSelector(selectIsLoading);
   const listings = useSelector(selectListings);
   let { subreddit } = useParams();
 
@@ -18,13 +21,23 @@ export default function Listings() {
     dispatch(loadListingsBySubreddit(subreddit));
   }, [subreddit, dispatch]);
 
+  if (loading) {
+    return (
+      <div className="listings">
+        <div className="loading">
+          <BounceLoader loading={loading} size={80} color="#36D7B7" />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="listings">
       {listings.map((listing) => {
         return (
           <Link
             to={`/r/${subreddit}/comments/${listing.id}`}
-            className="text-link "
+            className="text-link"
           >
             <Listing data={listing} key={listing.id} />
           </Link>

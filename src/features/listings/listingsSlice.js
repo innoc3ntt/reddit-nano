@@ -41,5 +41,6 @@ export const listingsSlice = createSlice({
 });
 
 export const selectListings = (state) => state.listings.listings;
+export const selectIsLoading = (state) => state.listings.isLoading;
 export const { addListing, changeSubreddit } = listingsSlice.actions;
 export default listingsSlice.reducer;

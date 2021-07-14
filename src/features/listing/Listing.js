@@ -1,6 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { kformatter, previewText } from "../../app/helpers/helpers";
+import ReactMarkdown from "react-markdown";
+import { gfm } from "remark-gfm";
 
 export default function Listing(props) {
   const {
@@ -38,7 +40,14 @@ export default function Listing(props) {
 
         <div className="listingContent">
           <h1>{title}</h1>
-          <h3>{selftext && previewText(selftext, 500)}</h3>
+          <h3>
+            {selftext && (
+              <ReactMarkdown
+                remarkPlugins={gfm}
+                children={previewText(selftext, 500)}
+              />
+            )}
+          </h3>
           {img || previewUrl}
         </div>
 

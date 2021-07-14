@@ -16,6 +16,7 @@ import {
   utcTimeConverter,
   previewText,
 } from "../../app/helpers/helpers";
+import BounceLoader from "react-spinners/BounceLoader";
 
 export default function Comments() {
   const dispatch = useDispatch();
@@ -58,6 +59,16 @@ export default function Comments() {
       <ReactMarkdown remarkPlugins={gfm} children={selftext} />
     </div>
   );
+
+  if (loading) {
+    return (
+      <div className="listings">
+        <div className="loading">
+          <BounceLoader loading={loading} size={80} color="#36D7B7" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="commentsContainer">

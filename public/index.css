@@ -63,6 +63,7 @@ p {
   position: absolute;
   top: 70px;
   justify-content: center;
+  width: 100%;
 }
 
 ul {
@@ -215,4 +216,17 @@ h3 {
 
 .postHeader {
   display: flex;
+}
+
+.loading {
+  width: 90%;
+  height: auto;
+  border: 1px black;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: var(--dark-gray);
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
