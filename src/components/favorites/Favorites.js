@@ -2,7 +2,6 @@ import React from "react";
 import { selectFavorites } from "./favoritesSlice";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Avatar } from "@material-ui/core";
 
 export default function Favorites() {
   const favorites = useSelector(selectFavorites);
