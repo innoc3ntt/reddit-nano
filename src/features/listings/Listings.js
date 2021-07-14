@@ -31,6 +31,8 @@ export default function Listings() {
     );
   }
 
+  //FIXME: NOTE THERE IS A NESTED <a> ERROR FROM THE LINK BELOW TO THE REACT MARKDOWN maybe put ignore in disallowed props for react markdown
+
   return (
     <div className="listings">
       {listings.map((listing) => {
@@ -38,6 +40,7 @@ export default function Listings() {
           <Link
             to={`/r/${subreddit}/comments/${listing.id}`}
             className="text-link"
+            key={listing.id}
           >
             <Listing data={listing} key={listing.id} />
           </Link>

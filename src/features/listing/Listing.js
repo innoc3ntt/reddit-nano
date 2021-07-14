@@ -17,9 +17,11 @@ export default function Listing(props) {
 
   const img = <img src={url} alt="" />;
   const previewUrl = (
-    <h3>
-      <a href={url_overridden_by_dest}>{url_overridden_by_dest}</a>
-    </h3>
+    <a href={url_overridden_by_dest}>{url_overridden_by_dest}</a>
+  );
+
+  const preview = (
+    <ReactMarkdown remarkPlugins={gfm} children={previewText(selftext, 500)} />
   );
 
   return (
@@ -40,14 +42,9 @@ export default function Listing(props) {
 
         <div className="listingContent">
           <h1>{title}</h1>
-          <h3>
-            {selftext && (
-              <ReactMarkdown
-                remarkPlugins={gfm}
-                children={previewText(selftext, 500)}
-              />
-            )}
-          </h3>
+
+          {selftext && preview}
+
           {img || previewUrl}
         </div>
 
