@@ -3,8 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { kformatter } from "../../app/helpers/helpers";
 
 export default function Listing(props) {
-  const { subreddit_name_prefixed, title, author, url, selftext, score } =
-    props.data;
+  const {
+    subreddit_name_prefixed,
+    title,
+    author,
+    url,
+    selftext,
+    score,
+    url_overridden_by_dest,
+  } = props.data;
 
   const previewText = (text, wordLimit) =>
     text.length > wordLimit ? text.substring(0, wordLimit) + "  [...]" : text;

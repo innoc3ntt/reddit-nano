@@ -12,6 +12,7 @@ export default function Comment(props) {
           <h2>{author}</h2>
           <h3>{utcTimeConverter(created_utc)}</h3>
         </div>
+
         <ReactMarkdown remarkPlugins={gfm} children={body} />
         <span>{kformatter(ups)} Likes </span>
       </div>

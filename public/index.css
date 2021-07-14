@@ -18,13 +18,21 @@ body {
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-}
-
 h1 {
   font-size: 1.75rem;
   font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 0.75rem;
+  font-weight: 0;
+}
+
+h3 {
+  font-size: 0.75rem;
+  font-weight: 300;
 }
 
 p {
@@ -43,11 +51,9 @@ p {
   font-size: 2rem;
 }
 
-.text-link {
+.text-link,
+.text-link.a {
   text-decoration: none;
-}
-
-a:visited {
   color: black;
 }
 
@@ -99,6 +105,16 @@ li {
   font-size: 22px;
 }
 
+/* Shared styling for comments & listings */
+
+.chevrons {
+  color: var(--light-brown);
+}
+
+.info:hover {
+  color: var(--reddit-orange);
+}
+
 /* LISTING STYLES */
 
 .info {
@@ -122,19 +138,6 @@ li {
   align-items: center;
 }
 
-.chevrons {
-  color: var(--light-brown);
-}
-
-.info:hover {
-  color: var(--reddit-orange);
-}
-
-h1 {
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-
 .listingFooter {
   padding: 8px 0;
 }
@@ -147,7 +150,7 @@ h1 {
   background-color: var(--darker-gray);
 }
 
-.listingMain:hover .listingContent {
+.listingContent h1:hover {
   color: var(--light-pink);
 }
 
@@ -169,16 +172,6 @@ img {
   max-width: 100%;
 }
 
-h3 {
-  font-size: 0.75rem;
-  font-weight: 300;
-}
-
-h2 {
-  font-size: 0.75rem;
-  font-weight: 0;
-}
-
 .listingMain {
   width: 100%;
 }
@@ -186,6 +179,8 @@ h2 {
 .listingContent {
   height: auto;
 }
+
+/* Comments Styling */
 
 .comment {
   border: 1px black;

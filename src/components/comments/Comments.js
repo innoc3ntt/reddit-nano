@@ -11,14 +11,25 @@ import {
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { gfm } from "remark-gfm";
-import { kformatter, utcTimeConverter } from "../../app/helpers/helpers";
+import {
+  kformatter,
+  utcTimeConverter,
+  previewText,
+} from "../../app/helpers/helpers";
 
 export default function Comments() {
   const dispatch = useDispatch();
   const comments = useSelector(selectComments);
   const post = useSelector(selectPost);
   const loading = useSelector(selectIsLoading);
-  const { author, created_utc, title, selftext, score } = post;
+  const {
+    author,
+    created_utc,
+    title,
+    selftext,
+    score,
+    url_overridden_by_dest,
+  } = post;
   const { subreddit, id } = useParams();
 
   useEffect(() => {
@@ -41,6 +52,9 @@ export default function Comments() {
           <h1>{title}</h1>
         </div>
       </div>
+      <p>
+        <a href={url_overridden_by_dest}>{url_overridden_by_dest}</a>
+      </p>
       <ReactMarkdown remarkPlugins={gfm} children={selftext} />
     </div>
   );

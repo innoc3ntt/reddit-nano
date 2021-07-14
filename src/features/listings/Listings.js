@@ -22,7 +22,10 @@ export default function Listings() {
     <div className="listings">
       {listings.map((listing) => {
         return (
-          <Link to={`/r/${subreddit}/comments/${listing.id}`}>
+          <Link
+            to={`/r/${subreddit}/comments/${listing.id}`}
+            className="text-link "
+          >
             <Listing data={listing} key={listing.id} />
           </Link>
         );
