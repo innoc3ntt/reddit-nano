@@ -17,7 +17,6 @@ export default function Listings() {
   let { subreddit } = useParams();
 
   subreddit = subreddit ? subreddit : "popular";
-  console.log(subreddit);
 
   useEffect(() => {
     dispatch(changeSubreddit(subreddit));
