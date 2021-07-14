@@ -41,7 +41,7 @@ export default function Listings() {
       {listings.map((listing) => {
         return (
           <Link
-            to={`/r/${subreddit}/comments/${listing.id}`}
+            to={`/r/${listing.subreddit}/comments/${listing.id}`}
             className="text-link"
             key={listing.id}
           >
