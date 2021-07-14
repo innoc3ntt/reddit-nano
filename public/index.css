@@ -66,18 +66,25 @@ p {
   width: 100%;
 }
 
-ul {
+.Favorites ul {
   list-style: none;
   padding: 0;
 }
 
-li {
-  text-align: left;
-  padding: 10px;
+.Favorites li {
+  padding: 10px 80px 10px 10px;
   margin: 5px;
   border: 1px black solid;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }
 
+.Favorites img {
+  margin: 8px;
+  height: 2rem;
+  border-radius: 50%;
+}
 .Favorites {
   background: var(--dark-gray);
   padding: 10px;
