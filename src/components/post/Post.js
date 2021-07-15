@@ -37,7 +37,9 @@ export default function POST() {
         </div>
       </header>
 
-      <a href={url_overridden_by_dest}>{url_overridden_by_dest}</a>
+      <p>
+        <a href={url_overridden_by_dest}>{url_overridden_by_dest}</a>
+      </p>
 
       <ReactMarkdown remarkPlugins={gfm} children={selftext} />
     </div>

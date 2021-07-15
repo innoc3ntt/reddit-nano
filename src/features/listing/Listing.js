@@ -34,7 +34,9 @@ export default function Listing(props) {
 
   const img = <img src={url} alt="" />;
   const previewUrl = (
-    <a href={url_overridden_by_dest}>{url_overridden_by_dest}</a>
+    <p>
+      <a href={url_overridden_by_dest}>{url_overridden_by_dest}</a>
+    </p>
   );
 
   const preview = (
