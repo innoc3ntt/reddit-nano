@@ -16,16 +16,16 @@ export const utcTimeConverter = (postTime) => {
   const secondsInYear = secondsInMonth * 12;
 
   return elapsed < 60
-    ? `Posted ${elapsed} seconds ago`
+    ? `${elapsed} seconds ago`
     : elapsed < secondsInHour
-    ? `Posted ${Math.floor(elapsed / 60)} minutes ago`
+    ? `${Math.floor(elapsed / 60)} minutes ago`
     : elapsed < secondsInDay
-    ? `Posted ${Math.floor(elapsed / secondsInHour)} hours ago`
+    ? `${Math.floor(elapsed / secondsInHour)} hours ago`
     : elapsed < secondsInMonth
-    ? `Posted ${Math.floor(elapsed / secondsInDay)} days ago`
+    ? `${Math.floor(elapsed / secondsInDay)} days ago`
     : elapsed < secondsInYear
-    ? `Posted ${Math.floor(elapsed / secondsInMonth)} months ago`
-    : `Posted ${Math.floor(elapsed / secondsInYear)} years ago`;
+    ? `${Math.floor(elapsed / secondsInMonth)} months ago`
+    : `${Math.floor(elapsed / secondsInYear)} years ago`;
 };
 
 export const previewText = (text, wordLimit) =>

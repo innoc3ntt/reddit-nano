@@ -1,6 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { kformatter, previewText } from "../../app/helpers/helpers";
+import {
+  kformatter,
+  previewText,
+  utcTimeConverter,
+} from "../../app/helpers/helpers";
 import ReactMarkdown from "react-markdown";
 import { gfm } from "remark-gfm";
 
@@ -13,6 +17,7 @@ export default function Listing(props) {
     selftext,
     score,
     url_overridden_by_dest,
+    created_utc,
   } = props.data;
 
   const img = <img src={url} alt="" />;
@@ -38,6 +43,7 @@ export default function Listing(props) {
         <div className="listingHeader">
           <h2>{subreddit_name_prefixed}</h2>
           <h3>Posted by {author}</h3>
+          <h3>{utcTimeConverter(created_utc)}</h3>
         </div>
 
         <div className="listingContent">
