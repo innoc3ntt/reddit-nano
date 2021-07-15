@@ -8,7 +8,7 @@ import {
   selectIsLoading,
 } from "./listingsSlice";
 import { useParams, Link } from "react-router-dom";
-import BounceLoader from "react-spinners/BounceLoader";
+import Loading from "../../components/Loading/Loading";
 
 export default function Listings() {
   const dispatch = useDispatch();
@@ -24,16 +24,8 @@ export default function Listings() {
   }, [subreddit, dispatch]);
 
   if (loading) {
-    return (
-      <div className="listings">
-        <div className="loading">
-          <BounceLoader loading={loading} size={80} color="#36D7B7" />
-        </div>
-      </div>
-    );
+    return <Loading />;
   }
-
-  //FIXME: NOTE THERE IS A NESTED <a> ERROR FROM THE LINK BELOW TO THE REACT MARKDOWN maybe put ignore in disallowed props for react markdown
 
   return (
     <div className="listings">

@@ -26,7 +26,11 @@ export default function Listing(props) {
   );
 
   const preview = (
-    <ReactMarkdown remarkPlugins={gfm} children={previewText(selftext, 500)} />
+    <ReactMarkdown
+      disallowedElements={["a"]}
+      remarkPlugins={gfm}
+      children={previewText(selftext, 500)}
+    />
   );
 
   return (
