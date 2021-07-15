@@ -138,13 +138,15 @@ p {
 }
 
 .listing {
-  border: 1px black;
   margin: 0 20px 20px 20px;
   padding: 10px 30px 10px 20px;
   background-color: var(--dark-gray);
   opacity: 0.8;
   display: flex;
   align-items: center;
+}
+.listing:hover {
+  border: 1px black solid;
 }
 
 .listingContent h1:hover {
