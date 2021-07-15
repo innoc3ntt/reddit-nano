@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,14 +13,31 @@ export default function SearchBar() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Search here"
-        value={searchTerm}
-        className="search"
-      />
-    </form>
+    <div className="Search-bar">
+      <Link to="/">
+        <FontAwesomeIcon
+          icon={["fab", "reddit"]}
+          size="3x"
+          color="#FF5700"
+          className="App-logo"
+        />
+      </Link>
+
+      <div>
+        <Link to="/" className="text-link">
+          <span className="titleReddit">Reddit </span>
+          <span className="titleNano">NANO</span>
+        </Link>
+      </div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search here"
+          value={searchTerm}
+          className="search"
+        />
+      </form>
+    </div>
   );
 }
