@@ -3,6 +3,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Reddit Nano was built as a final portfolio project for the Codecademy Front-End Developer course.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/df76ccad-070c-4728-a475-e1e4eeecebd4/deploy-status)](https://app.netlify.com/sites/redditnano/deploys)
+
 ## Project Requirements
 - Build the application using React and Redux
 - Version control your application with Git and host the repository on GitHub
