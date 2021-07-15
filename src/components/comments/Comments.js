@@ -22,7 +22,7 @@ export default function Comments() {
   }
 
   return (
-    <div className="commentsContainer">
+    <div className="container comments">
       {!loading && <BackButton />}
       {!loading && <Post />}
       {!loading && <CommentsList />}

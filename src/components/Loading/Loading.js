@@ -3,10 +3,8 @@ import BounceLoader from "react-spinners/BounceLoader";
 
 export default function Loading(props) {
   return (
-    <div className="listings">
-      <div className="loading">
-        <BounceLoader loading={props.loading} size={80} color="#36D7B7" />
-      </div>
+    <div className="loading">
+      <BounceLoader loading={props.loading} size={80} color="#36D7B7" />
     </div>
   );
 }

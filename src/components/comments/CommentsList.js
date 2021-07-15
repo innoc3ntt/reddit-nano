@@ -7,7 +7,7 @@ export default function CommentsList() {
   const comments = useSelector(selectComments);
 
   return (
-    <div className="comments">
+    <div>
       {comments.map((comment, index) => {
         return <Comment data={comment.data} key={index} />;
       })}

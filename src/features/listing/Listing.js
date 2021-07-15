@@ -47,30 +47,33 @@ export default function Listing(props) {
 
   return (
     <div className="listing">
-      <div className="info">
-        <FontAwesomeIcon icon="chevron-up" size="2x" />
-
+      <aside>
+        <FontAwesomeIcon icon="chevron-up" size="2x" className="chevron-up" />
         <span>{kformatter(score)}</span>
+        <FontAwesomeIcon
+          icon="chevron-down"
+          size="2x"
+          className="chevron-down"
+        />
+      </aside>
 
-        <FontAwesomeIcon icon="chevron-down" size="2x" />
-      </div>
-
-      <div className="listingMain">
-        <div className="listingHeader">
+      <div>
+        <header>
           <h2>{subreddit_name_prefixed}</h2>
           <h3>Posted by {author}</h3>
           <h3>{utcTimeConverter(created_utc)}</h3>
-        </div>
+        </header>
 
-        <div className="listingContent">
+        <main>
           <h1>{title}</h1>
+          <ReactMarkdown remarkPlugins={gfm} children={body} />
 
           {selftext && preview}
 
           {img || previewUrl}
-        </div>
+        </main>
 
-        <div className="listingFooter">
+        <footer>
           <ReactMarkdown remarkPlugins={gfm} children={body} />
           <Button
             endIcon={<CommentIcon />}
@@ -80,7 +83,7 @@ export default function Listing(props) {
           >
             Comments
           </Button>
-          <ReactMarkdown remarkPlugins={gfm} children={body} />
+
           <Button
             endIcon={<ShareIcon />}
             variant="contained"
@@ -89,7 +92,7 @@ export default function Listing(props) {
           >
             Share
           </Button>
-        </div>
+        </footer>
       </div>
     </div>
   );

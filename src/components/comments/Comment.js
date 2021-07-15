@@ -8,14 +8,17 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 export default function Comment(props) {
   const { author, ups, created_utc, body } = props.data;
   return (
-    <div>
-      <div className="comment">
-        <div className="commentHeader">
-          <h2>{author}</h2>
-          <h3>{utcTimeConverter(created_utc)}</h3>
-        </div>
+    <div className="comment">
+      <header>
+        <h2>{author}</h2>
+        <h3>{utcTimeConverter(created_utc)}</h3>
+      </header>
 
+      <main>
         <ReactMarkdown remarkPlugins={gfm} children={body} />
+      </main>
+
+      <footer>
         <Button
           endIcon={<ThumbUpIcon />}
           variant="contained"
@@ -24,7 +27,7 @@ export default function Comment(props) {
         >
           {kformatter(ups)}
         </Button>
-      </div>
+      </footer>
     </div>
   );
 }

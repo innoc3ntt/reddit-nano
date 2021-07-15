@@ -39,6 +39,10 @@ p {
   font-size: 0.75rem;
 }
 
+img {
+  max-width: 100%;
+}
+
 .titleReddit {
   font-family: "Lobster";
   color: var(--reddit-orange);
@@ -66,6 +70,12 @@ p {
   width: 100%;
 }
 
+.Favorites {
+  background: var(--dark-gray);
+  padding: 5px 20px;
+  min-height: 3000px;
+}
+
 .Favorites ul {
   list-style: none;
   padding: 0;
@@ -74,21 +84,20 @@ p {
 .Favorites li {
   padding: 10px 80px 10px 10px;
   margin: 5px;
-  border: 1px black solid;
+  border-bottom: 1px black solid;
   display: flex;
   align-items: center;
   font-weight: bold;
+}
+
+.Favorites li:hover {
+  border-bottom: 1px white solid;
 }
 
 .Favorites img {
   margin: 8px;
   height: 2rem;
   border-radius: 50%;
-}
-.Favorites {
-  background: var(--dark-gray);
-  padding: 10px;
-  min-height: 3000px;
 }
 
 .Search-bar {
@@ -114,27 +123,51 @@ p {
   font-size: 22px;
 }
 
-/* Shared styling for comments & listings */
+/* Listings & Comments shared styling */
 
-.chevrons {
-  color: var(--light-brown);
-}
-
-.info:hover {
-  color: var(--reddit-orange);
-}
-
-/* LISTING STYLES */
-
-.info {
+aside {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-right: 20px;
+  font-weight: bold;
 }
 
-.listings {
-  width: 50%;
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header > * {
+  margin-right: 5px;
+  display: inline;
+}
+
+h1:hover {
+  color: var(--light-pink);
+}
+
+.chevron-up:hover {
+  color: green;
+}
+
+.chevron-down:hover {
+  color: red;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 20px;
+  justify-content: center;
+}
+
+/* Listings component styling */
+
+.listing:hover {
+  border: 1px black solid;
 }
 
 .listing {
@@ -145,67 +178,22 @@ p {
   display: flex;
   align-items: center;
 }
-.listing:hover {
-  border: 1px black solid;
-}
 
-.listingContent h1:hover {
-  color: var(--light-pink);
-}
-
-.info span {
-  font-weight: bold;
-}
-
-.listingHeader {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.listingHeader > :first-child {
-  padding-right: 5px;
-}
-
-img {
-  max-width: 100%;
-}
-
-.listingMain {
-  width: 100%;
-}
-
-.listingContent {
-  height: auto;
-}
-
-/* Comments Styling */
+/* Comments component styling */
 
 .comment {
-  border: 1px black;
   margin: 0 20px 20px 20px;
-  padding: 10px 30px 10px 20px;
+  padding: 10px 30px;
   background-color: var(--dark-gray);
   opacity: 0.8;
 }
 
-.commentHeader h2,
-h3 {
-  display: inline;
-  margin-right: 5px;
-}
-
-.commentsContainer {
-  display: flex;
-  flex-direction: column;
-  padding: 0 20px;
-  width: 60%;
+.container.comments {
   background-color: blanchedalmond;
-  margin-left: 20px;
 }
 
 .post {
-  padding: 15px;
+  padding: 20px;
 }
 
 .post h2,
@@ -214,18 +202,11 @@ h3 {
   margin-right: 5px;
 }
 
-.postHeader {
-  display: flex;
-}
-
 .loading {
-  width: 90%;
-  height: auto;
-  border: 1px black;
+  width: 60%;
   margin: 20px 20px;
   padding: 30px;
   opacity: 0.8;
   display: flex;
   justify-content: center;
-  align-items: center;
 }

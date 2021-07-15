@@ -28,7 +28,7 @@ export default function Listings() {
   }
 
   return (
-    <div className="listings">
+    <div className="container">
       {listings.map((listing) => {
         return (
           <Link

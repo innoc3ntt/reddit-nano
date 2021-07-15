@@ -19,19 +19,23 @@ export default function POST() {
 
   return (
     <div className="post">
-      <div className="postHeader">
-        <div className="info">
-          <FontAwesomeIcon icon="chevron-up" size="2x" />
+      <header>
+        <aside className="post-aside">
+          <FontAwesomeIcon icon="chevron-up" size="2x" className="chevron-up" />
           <span>{kformatter(score)}</span>
-          <FontAwesomeIcon icon="chevron-down" size="2x" />
-        </div>
+          <FontAwesomeIcon
+            icon="chevron-down"
+            size="2x"
+            className="chevron-down"
+          />
+        </aside>
         <div>
           <h2>Posted by {author}</h2>
           <h3>Posted {utcTimeConverter(created_utc)}</h3>
 
           <h1>{title}</h1>
         </div>
-      </div>
+      </header>
 
       <a href={url_overridden_by_dest}>{url_overridden_by_dest}</a>
 
