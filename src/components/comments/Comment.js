@@ -2,6 +2,8 @@ import React from "react";
 import { utcTimeConverter, kformatter } from "../../app/helpers/helpers";
 import ReactMarkdown from "react-markdown";
 import { gfm } from "remark-gfm";
+import { Button } from "@material-ui/core";
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 
 export default function Comment(props) {
   const { author, ups, created_utc, body } = props.data;
@@ -14,7 +16,14 @@ export default function Comment(props) {
         </div>
 
         <ReactMarkdown remarkPlugins={gfm} children={body} />
-        <span>{kformatter(ups)} Likes </span>
+        <Button
+          endIcon={<ThumbUpIcon />}
+          variant="contained"
+          size="small"
+          color="primary"
+        >
+          {kformatter(ups)}
+        </Button>
       </div>
     </div>
   );
