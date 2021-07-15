@@ -6,22 +6,27 @@ import {
   changeSubreddit,
   loadListingsBySubreddit,
   selectIsLoading,
+  loadListingsBySearch,
 } from "./listingsSlice";
-import { useParams, Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
 
 export default function Listings() {
   const dispatch = useDispatch();
   const loading = useSelector(selectIsLoading);
   const listings = useSelector(selectListings);
-  let { subreddit } = useParams();
+  let { subreddit, search } = useLocation();
 
   subreddit = subreddit ? subreddit : "popular";
 
   useEffect(() => {
+    if (search) {
+      dispatch(loadListingsBySearch(search.substring(3)));
+    }
+
     dispatch(changeSubreddit(subreddit));
     dispatch(loadListingsBySubreddit(subreddit));
-  }, [subreddit, dispatch]);
+  }, [subreddit, dispatch, search]);
 
   if (loading) {
     return <Loading />;

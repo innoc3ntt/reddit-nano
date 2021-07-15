@@ -48,6 +48,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Listings} />
             <Route exact path={`/r/:subreddit`} component={Listings} />
+            <Route path={`/search`} component={Listings} />
             <Route path={`/r/:subreddit/comments/:id`} component={Comments} />
           </Switch>
         </div>

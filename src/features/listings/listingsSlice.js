@@ -9,6 +9,17 @@ export const loadListingsBySubreddit = createAsyncThunk(
   }
 );
 
+export const loadListingsBySearch = createAsyncThunk(
+  "listings/loadListingsBySearch",
+  async (searchTerm) => {
+    const data = await fetch(
+      `https://www.reddit.com/search.json?q=${searchTerm}`
+    );
+    const json = await data.json();
+    return json.data.children.map((listing) => listing.data);
+  }
+);
+
 export const listingsSlice = createSlice({
   name: "listings",
   initialState: {
@@ -34,6 +45,19 @@ export const listingsSlice = createSlice({
         state.listings = action.payload;
       })
       .addCase(loadListingsBySubreddit.rejected, (state) => {
+        state.isLoading = false;
+        state.hasError = true;
+      })
+      .addCase(loadListingsBySearch.pending, (state) => {
+        state.isLoading = true;
+        state.hasError = false;
+      })
+      .addCase(loadListingsBySearch.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.hasError = false;
+        state.listings = action.payload;
+      })
+      .addCase(loadListingsBySearch.rejected, (state) => {
         state.isLoading = false;
         state.hasError = true;
       });
