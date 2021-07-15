@@ -79,6 +79,7 @@ img {
   background: var(--dark-gray);
   padding: 5px 20px;
   min-height: 100vw;
+  min-width: 180px;
 }
 
 .Favorites ul {
@@ -87,7 +88,7 @@ img {
 }
 
 .Favorites li {
-  padding: 10px 80px 10px 10px;
+  padding: 10px 80px 10px 15px;
   margin: 5px;
   border-bottom: 1px black solid;
   display: flex;
@@ -179,8 +180,8 @@ h1:hover {
 }
 
 .listing {
-  margin: 0 20px 20px 20px;
-  padding: 10px 30px 10px 20px;
+  margin-bottom: 20px;
+  padding: 10px 30px 10px 10px;
   background-color: var(--dark-gray);
   opacity: 0.8;
   display: flex;
