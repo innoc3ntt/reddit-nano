@@ -7,6 +7,10 @@ import {
 } from "../../app/helpers/helpers";
 import ReactMarkdown from "react-markdown";
 import { gfm } from "remark-gfm";
+import { Button } from "@material-ui/core";
+import CommentIcon from "@material-ui/icons/Comment";
+import ShareIcon from "@material-ui/icons/Share";
+import { makeStyles } from "@material-ui/core/styles";
 
 export default function Listing(props) {
   const {
@@ -18,7 +22,15 @@ export default function Listing(props) {
     score,
     url_overridden_by_dest,
     created_utc,
+    body,
   } = props.data;
+
+  const useStyles = makeStyles((theme) => ({
+    button: {
+      margin: theme.spacing(1),
+    },
+  }));
+  const classes = useStyles();
 
   const img = <img src={url} alt="" />;
   const previewUrl = (
@@ -59,8 +71,24 @@ export default function Listing(props) {
         </div>
 
         <div className="listingFooter">
-          <span>COMMENTS</span>
-          <span>SHARE</span>
+          <ReactMarkdown remarkPlugins={gfm} children={body} />
+          <Button
+            endIcon={<CommentIcon />}
+            variant="contained"
+            color="primary"
+            className={classes.button}
+          >
+            Comments
+          </Button>
+          <ReactMarkdown remarkPlugins={gfm} children={body} />
+          <Button
+            endIcon={<ShareIcon />}
+            variant="contained"
+            color="primary"
+            className={classes.button}
+          >
+            Share
+          </Button>
         </div>
       </div>
     </div>
