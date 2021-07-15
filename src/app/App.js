@@ -7,7 +7,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Comments from "../components/comments/Comments";
 
 library.add(fab, faChevronDown, faChevronUp);
