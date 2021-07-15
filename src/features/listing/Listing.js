@@ -62,8 +62,10 @@ export default function Listing(props) {
       <div>
         <header>
           <h2>{subreddit_name_prefixed}</h2>
-          <h3>Posted by {author}</h3>
-          <h3>{utcTimeConverter(created_utc)}</h3>
+          <div>
+            <h3>Posted by {author}</h3>
+            <h3>{utcTimeConverter(created_utc)}</h3>
+          </div>
         </header>
 
         <main>
