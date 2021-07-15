@@ -8,14 +8,15 @@ import {
   selectIsLoading,
   loadListingsBySearch,
 } from "./listingsSlice";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
 
 export default function Listings() {
   const dispatch = useDispatch();
   const loading = useSelector(selectIsLoading);
   const listings = useSelector(selectListings);
-  let { subreddit, search } = useLocation();
+  let { subreddit } = useParams();
+  let { search } = useLocation();
 
   subreddit = subreddit ? subreddit : "popular";
 
