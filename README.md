@@ -5,6 +5,8 @@ Reddit Nano was built as a final portfolio project for the Codecademy Front-End 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/df76ccad-070c-4728-a475-e1e4eeecebd4/deploy-status)](https://app.netlify.com/sites/redditnano/deploys)
 
+![image](https://user-images.githubusercontent.com/84115199/125889685-b331c2cc-1966-45a0-9bfa-dba0ef7c9316.png)
+
 ## Project Requirements
 - Build the application using React and Redux
 - Version control your application with Git and host the repository on GitHub
@@ -44,31 +46,44 @@ This repo makes use of:
 * **CSS**
 * **HTML**
 
+## Lighthouse Audit Results
+ ![image](https://user-images.githubusercontent.com/84115199/125889639-b1b22fc5-05e0-4eca-896a-b6fe968779b7.png)
+
+
 ## File structure
-<!---
 ```bash
-reddit-client/
+reddit-nano/
 ├── public     # Public files used on the frontend
 └── src        # Frontend SPA
 
-reddit-client/src
-├── components     # Reusabble parts
-├── features       # Redux slices
-├── helpers        # Utilify functions
-├── hooks          # Custom hooks
-├── pages          # Application views
-├── store          # Redux store configuration
-└── theme          # Material UI theme configuration
+reddit-nano/src
+├───app
+│   └───helpers
+├───components
+│   ├───BackButton
+│   ├───comments
+│   ├───favorites
+│   ├───Loading
+│   ├───post
+│   └───searchBar
+└───features
+    ├───listing
+    └───listings
 ```
---->
+
 ## Currently in development
 WIP List
 * Jest & Enzyme for unit and snapshot testing
 * Media queries for small screen
 * E2E testing with testcafe
-* Error landing page for fetch failures
+* Error landing page for fetch/search failures
 
 ## Future development
 Some potential features to look into:
 * Displaying nested url structure for navigation
 * Displaying videos
+* Using loading skeletons
+* Fix the favorites bar with scroll, possibly using sticky position
+* Optimise font sizing for readability
+* Investigate source maps
+* Reorganise features vs components
