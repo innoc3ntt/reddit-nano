@@ -5,6 +5,8 @@ Reddit Nano was built as a final portfolio project for the Codecademy Front-End 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/df76ccad-070c-4728-a475-e1e4eeecebd4/deploy-status)](https://app.netlify.com/sites/redditnano/deploys)
 
+Site available here: https://redditnano.netlify.app 
+
 ![image](https://user-images.githubusercontent.com/84115199/125889685-b331c2cc-1966-45a0-9bfa-dba0ef7c9316.png)
 
 ## Project Requirements
